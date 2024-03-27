@@ -42,10 +42,10 @@ every node to find the end node to create the path from start to end, but if the
 is no way to reach the end node from the start or the node doesn't exist, then
 there will never be an augmenting path from start to end. This implementation
 reused most of my code from depth first search from the graph search exercise, so
-the runtime is the same. Every vertice is checked to see if it is the target node
+the runtime is the same. Every vertice is checked to see if it is the end node
 we want through our if check and our currPath.push, which will run for |V| or number
 of vertices. Then the for loop and recursive call inside it, will check every directed edge
 that connects neighboring nodes to see if any neighboring node is the end node, resulting
-in our augmented path. This would run for number of edges or |E|, so putting everything
-together we get |V| + |E|. Therefore, our $\Theta$ worst case complexity for this
-implementation is $\Theta(|V| + |E|)$.
+in our augmented path. This would run for number of edges or |E|, as we would search every edge
+to find out that there is no path. Now, putting everything together we get |V| + |E|. 
+Therefore, our $\Theta$ worst case complexity for this implementation is $\Theta(|V| + |E|)$.
