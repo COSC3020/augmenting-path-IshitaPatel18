@@ -33,3 +33,19 @@ accordingly.
 
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+My answer:
+
+The worst case scenario is that there is no augmenting path, which means
+there is no path from the start to the end. The algorithm will have to traverse
+every node to find the end node to create the path from start to end, but if there
+is no way to reach the end node from the start or the node doesn't exist, then
+there will never be an augmenting path from start to end. This implementation
+reused most of my code from depth first search from the graph search exercise, so
+the runtime is the same. Every vertice is checked to see if it is the target node
+we want through our if check and our currPath.push, which will run for |V| or number
+of vertices. Then the for loop and recursive call inside it, will check every directed edge
+that connects neighboring nodes to see if any neighboring node is the end node, resulting
+in our augmented path. This would run for number of edges or |E|, so putting everything
+together we get |V| + |E|. Therefore, our $\Theta$ worst case complexity for this
+implementation is $\Theta(|V| + |E|)$.
